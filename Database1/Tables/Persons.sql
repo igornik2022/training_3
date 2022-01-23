@@ -3,7 +3,8 @@
 	[Id] INT NOT NULL PRIMARY KEY, 
     [Name] NVARCHAR(50) NOT NULL, 
     [Surname] NVARCHAR(50) NOT NULL, 
-    [Patronymic] NVARCHAR(50) NOT NULL
+    [Patronymic] NVARCHAR(50) NOT NULL, 
+    [DataInput] DATETIME NOT NULL
 )
 
 GO
@@ -51,3 +52,12 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'Persons',
     @level2type = N'COLUMN',
     @level2name = N'Patronymic'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Дата зааписи',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'Persons',
+    @level2type = N'COLUMN',
+    @level2name = N'DataInput'
